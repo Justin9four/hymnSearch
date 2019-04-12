@@ -522,6 +522,12 @@ function sortList(list,type) {
       asc.list = true;
    if (type == "name")
       results.sort(function(a, b) {
+          if (list[a].name == "Not-Available") {
+              return 1;
+          }
+          if (list[b].name == "Not-Available") {
+            return -1;
+        }
           if (list[a].name < list[b].name)
              if (asc.list)
                 return -1;
