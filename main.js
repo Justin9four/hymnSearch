@@ -585,10 +585,15 @@ function outputResults(outPutID) {
 }
 
 function main() {        
-    if (document.getElementById("search") != null &&
-        document.getElementById("search") != undefined &&
-        document.getElementById("search").value != "") {
-        var regex = new RegExp(document.getElementById("search").value.toLowerCase());
+    var search = document.getElementById("search");
+    if (search != null &&
+        search != undefined &&
+        search.value != "") {
+        var searchValue = "";
+        if (search.value != NaN)
+           searchValue += "^";
+           searchValue += search.value;
+        var regex = new RegExp(searchValue.toLowerCase());
         searchLibrary(regex, englishHymns, spanishHymns);
         if (results.length > 0)
             outputResults("results");
@@ -600,6 +605,4 @@ function main() {
     {
         document.getElementById("results").innerHTML = "";
     }
-
-
 }
