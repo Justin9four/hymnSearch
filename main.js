@@ -3,6 +3,8 @@ var englishHymns = [];
 var results = [];
 var asc = {spanishHymns: true, englishHymns: true};
 
+// TODO account for special spanish characters like ñ or ó
+
 function searchLibrary(regex, searchList1, searchList2 = undefined) {
     results = [];
     var resultsJ = 0;

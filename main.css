@@ -27,7 +27,7 @@ table {
     box-sizing: border-box;
     background-color: white;
     border-color: black;
-    color: white;
+    color: black;
   }
 
   input[type=text]:focus {
