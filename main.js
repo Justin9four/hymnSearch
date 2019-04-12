@@ -590,9 +590,9 @@ function main() {
         search != undefined &&
         search.value != "") {
         var searchValue = "";
-        if (search.value != NaN)
+        if (!isNaN(search.value))
            searchValue += "^";
-           searchValue += search.value;
+        searchValue += search.value;
         var regex = new RegExp(searchValue.toLowerCase());
         searchLibrary(regex, englishHymns, spanishHymns);
         if (results.length > 0)
